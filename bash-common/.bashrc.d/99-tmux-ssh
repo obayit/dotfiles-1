@@ -1,0 +1,10 @@
+# autostart tmux on ssh login
+if [ "$PS1" != "" -a "${SSH_TMUX_SESSION:-x}" = x -a "${SSH_TTY:-x}" != x ]
+then
+        export SSH_TMUX_SESSION=1
+        sleep 1
+        ( (tmux has-session -t remote && tmux attach-session -t remote) || (tmux new-session -s remote) ) && exit 0
+        echo "tmux failed to start"
+fi
+
+# vim: ft=sh
