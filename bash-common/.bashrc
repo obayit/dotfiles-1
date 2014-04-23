@@ -1,6 +1,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Load modular config
+if [ -d ${HOME}/.bashrc.d ]; then
+    for file in ${HOME}/.bashrc.d/*; do
+        source "$file";
+    done
+fi
+
 . /usr/share/git/completion/git-prompt.sh
 . /usr/share/bash-completion/completions/ssh
 
