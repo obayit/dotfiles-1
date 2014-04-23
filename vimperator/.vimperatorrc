@@ -1,0 +1,34 @@
+" Gui {{{1
+set gui=none
+set scrollbars=false
+"}}}1
+
+" Search engines {{{1
+silent bmark -keyword=g -title="Google" -T=search,en "https://www.google.ru/search?hl=en&q=%s"
+silent bmark -keyword=gr -title="Google russian" -T=search,ru "https://www.google.ru/search?hl=ru&q=%s"
+silent bmark -keyword=ddg -title="DuckDuckGo" -T=search "https://ddg.gg/?q=%s"
+silent bmark -keyword=y -title="Yandex" -T=search,ru "https://ya.ru/?text=%s"
+silent bmark -keyword=wa -title="Archlinux wiki" -T=search,linux "https://wiki.archlinux.org/index.php/?search=%s"
+silent bmark -keyword=we -title="Wikipedia" -T=search,en "https://en.wikipedia.org/?search=%s"
+silent bmark -keyword=wr -title="Russian Wikipedia" -T=search,ru "https://ru.wikipedia.org/?search=%s"
+silent bmark -keyword=wl -title="Lurkmore" -T=search,ru "https://lurkmore.ru/?search=%s"
+silent bmark -keyword=tr -title="Yandex dict" -T=search,ru "http://m.slovari.yandex.ru/translate.xml?text=%s"
+silent bmark -keyword=ym -title="Yandex market" -T=search,shopping,ru "https://market.yandex.ru/search.xml?text=%s"
+
+set defsearch=g
+"}}}1
+
+" Quick marks {{{1
+silent qmark d https://d3.ru
+silent qmark h https://habrahabr.ru
+silent qmark v https://vk.com
+silent qmark l https://linux.org.ru
+silent qmark t https://top.artlebedev.ru
+" }}}
+
+let mapleader=','
+map <Leader>w :js WebDeveloper.Overlay.toggleToolbar()<CR>
+map <Leader>c :emenu Инструменты.Clearly<CR>
+map <Leader>m :tabopen https://mail.google.com/mail/?view=cm&fs=1&tf=1<CR>
+
+echo "Welocome to the Internet"
