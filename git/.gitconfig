@@ -1,0 +1,8 @@
+[user]
+	name = Peter Dosychev
+	email = dosy4ev@gmail.com
+[alias]
+	lg = log --format=oneline --abbrev-commit --graph
+	st = status -sb
+[color]
+	ui = auto
