@@ -2,7 +2,12 @@
 	name = Peter Dosychev
 	email = dosy4ev@gmail.com
 [alias]
-	lg = log --format=oneline --abbrev-commit --graph
 	st = status -sb
+	lg = log --format=oneline --abbrev-commit --graph
+	sh = show --oneline --name-status
+[diff]
+	tool = vimdiff
 [color]
 	ui = auto
+[credential]
+	helper = cache
