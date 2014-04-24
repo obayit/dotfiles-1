@@ -7,8 +7,9 @@ fi
 RESET='\[\033[00m\]'
 GREEN='\[\033[32m\]'
 BLUE='\[\033[34m\]'
+CYAN='\[\033[36m\]'
 RED='\[\033[33m\]'
 GIT_BRANCH='$(__git_ps1 "[git: %s]")'
-PS1="${GREEN}[\w]$RED${GIT_BRANCH}\n${BLUE}[\u@\h]${RESET}$ "
+PS1="${GREEN}[\w]$RED${GIT_BRANCH}\n${CYAN}[\u@\h]${RESET}$ "
 
 # vim: ft=sh
