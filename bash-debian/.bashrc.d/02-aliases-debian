@@ -1,0 +1,5 @@
+# Aliases
+alias ack="ack-grep"
+alias cal="ncal -C"
+
+# vim: ft=sh

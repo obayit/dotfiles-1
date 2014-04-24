@@ -1,27 +1,14 @@
 # Prompt
-. /usr/share/git/completion/git-prompt.sh
+
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+    . /usr/share/git/completion/git-prompt.sh
+fi
 
 RESET='\[\033[00m\]'
 GREEN='\[\033[32m\]'
 BLUE='\[\033[34m\]'
 RED='\[\033[33m\]'
 GIT_BRANCH='$(__git_ps1 "[git: %s]")'
-MC=''
-RANGER=''
-if [ "${MC_SID:-x}" != x ] ; then
-    MC='mc:'
-fi
-if [ "${RANGER_LEVEL:-x}" != x ] ; then
-    RANGER='ranger:'
-fi
-PS1="${GREEN}[${MC}${RANGER}\w]$RED${GIT_BRANCH}\n${BLUE}[\u@\h]${RESET}$ "
-
-if [ ${TERM} == "xterm" ] ;then
-    export TERM=xterm-256color
-fi
-
-if [ ${TERM} == "screen" ] && [ ${DISPLAY} ] ;then
-    export TERM=screen-256color
-fi
+PS1="${GREEN}[\w]$RED${GIT_BRANCH}\n${BLUE}[\u@\h]${RESET}$ "
 
 # vim: ft=sh
