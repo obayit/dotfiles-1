@@ -5,7 +5,7 @@ fs=no
 autofit=30%
 
 #Audio
-ao=alsa
+ao=pulse
 alang=jp,jpn,en,eng,us,usa
 
 #Video
