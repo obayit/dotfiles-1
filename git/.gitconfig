@@ -4,7 +4,9 @@
 [alias]
 	st = status -sb
 	lg = log --format=oneline --abbrev-commit --graph
+	ln = log --abbrev-commit --oneline --no-merges
 	sh = show --oneline --name-status
+    bdiff = show-branch --current --sha1-name
 [diff]
 	tool = vimdiff
 [color]
