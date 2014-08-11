@@ -21,3 +21,6 @@ slang=ru,rus,en,eng
 #Profiles
 [hdmi]
 ao=alsa:device=[hw:0,3]
+
+[tutor]
+af=scaletempo
