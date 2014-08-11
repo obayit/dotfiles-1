@@ -8,6 +8,9 @@ autofit=30%
 ao=pulse
 alang=jp,jpn,en,eng,us,usa
 
+#Network
+cache=8000
+
 #Video
 vo=vaapi
 hwdec=vaapi
