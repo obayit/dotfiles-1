@@ -7,6 +7,7 @@ autofit=30%
 #Audio
 ao=pulse
 alang=jp,jpn,en,eng,us,usa
+softvol=yes
 softvol-max=400
 
 #Network
