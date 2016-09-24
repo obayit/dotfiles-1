@@ -17,3 +17,7 @@
     path = ~/.gitconfig-local
 [push]
 	default = simple
+[core]
+	quotepath = off
+[merge]
+	tool = vimdiff
