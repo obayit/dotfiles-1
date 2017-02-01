@@ -1,23 +1,24 @@
 [user]
-	name = Peter Dosychev
-	email = dosy4ev@gmail.com
+    name = Peter Dosychev
+    email = dosy4ev@gmail.com
 [alias]
-	st = status -sb
-	lg = log --format=oneline --abbrev-commit --graph
-	ln = log --abbrev-commit --oneline --no-merges
-	sh = show --oneline --name-status
+    a = !tig status
+    st = status -sb
+    lg = log --format=oneline --abbrev-commit --graph
+    ln = log --abbrev-commit --oneline --no-merges
+    sh = show --oneline --name-status
     bdiff = show-branch --current --sha1-name
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [color]
-	ui = auto
+    ui = auto
 [credential]
-	helper = cache
+    helper = cache
 [include]
     path = ~/.gitconfig-local
 [push]
-	default = simple
+    default = simple
 [core]
-	quotepath = off
+    quotepath = off
 [merge]
-	tool = vimdiff
+    tool = vimdiff
