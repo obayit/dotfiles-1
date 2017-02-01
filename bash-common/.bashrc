@@ -13,6 +13,3 @@ if [ -d ${HOME}/.bashrc.d ]; then
     done
 fi
 
-PATH="$PATH:$HOME/bin"
-export PATH
-
