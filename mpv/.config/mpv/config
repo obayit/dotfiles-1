@@ -17,6 +17,7 @@ vo=opengl
 hwdec=vaapi
 
 #Subtitles
+sub-codepage=enca:ru
 slang=ru,rus,en,eng
 
 #Profiles
