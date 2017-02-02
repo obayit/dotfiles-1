@@ -1,0 +1,4 @@
+\pset linestyle unicode
+\pset null ¤
+\x auto
+\set HISTCONTROL ignoredups
