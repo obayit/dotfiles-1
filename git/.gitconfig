@@ -8,6 +8,7 @@
     ln = log --abbrev-commit --oneline --no-merges
     sh = show --oneline --name-status
     bdiff = show-branch --current --sha1-name
+    blist = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset)\t%(color:yellow)%(refname:short)%(color:reset)\t(%(color:green)%(committerdate:relative)%(color:reset))\t%(authorname)\t%(contents:subject)' | column -t -s '\t'
 [diff]
     tool = vimdiff
 [color]
@@ -22,3 +23,5 @@
     quotepath = off
 [merge]
     tool = vimdiff
+[difftool "sqldiff"]
+    cmd = sqldiff \"$LOCAL\" \"$REMOTE\" 
