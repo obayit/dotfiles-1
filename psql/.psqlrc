@@ -1,4 +1,13 @@
+
 \pset linestyle unicode
 \pset null ¤
 \x auto
 \set HISTCONTROL ignoredups
+\set uptime 'select now() - pg_postmaster_start_time() AS uptime;'
+
+-- Output formats
+
+\set format_cvs '\\pset format unaligned \\pset footer off \\pset fieldsep \',\''
+\set format_pretty '\\pset format aligned \\pset footer on \\pset fieldsep \'|\''
+
+:format_pretty
