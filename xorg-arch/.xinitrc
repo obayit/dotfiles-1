@@ -28,7 +28,7 @@ fi
 
 # keyboard {{{
 export GTK_IM_MODULE=xim
-export XMODIFIERS=@im=xim
+#export XMODIFIERS=@im=xim
 export QT_IM_MODULE=xim
 
 setxkbmap -layout us,ru -option grp:caps_toggle,compose:menu
