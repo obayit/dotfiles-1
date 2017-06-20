@@ -1,3 +1,4 @@
+\set QUIET ON
 
 \pset linestyle unicode
 \pset null ¤
@@ -11,3 +12,5 @@
 \set format_pretty '\\pset format aligned \\pset footer on \\pset fieldsep \'|\''
 
 :format_pretty
+
+\set QUIET OFF
