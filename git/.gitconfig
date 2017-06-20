@@ -9,8 +9,10 @@
     sh = show --oneline --name-status
     bdiff = show-branch --current --sha1-name
     blist = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset)\t%(color:yellow)%(refname:short)%(color:reset)\t(%(color:green)%(committerdate:relative)%(color:reset))\t%(authorname)\t%(contents:subject)' | column -t -s '\t'
+    blistc = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(objectname:short) %(refname:short)\t%(committerdate:relative) %(authorname)\t%(contents:subject)' | column -t -s '\t'
 [diff]
     tool = vimdiff
+    algorithm = histogram
 [color]
     ui = auto
 [credential]
