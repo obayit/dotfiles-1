@@ -13,4 +13,6 @@
 
 :format_pretty
 
+\ir .psqlrc-local
+
 \set QUIET OFF
