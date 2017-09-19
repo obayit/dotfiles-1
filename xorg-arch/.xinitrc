@@ -32,6 +32,7 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 
 setxkbmap -layout us,ru -option grp:caps_toggle,compose:menu
+xbindkeys
 # }}}
 
 # {{{ wm
