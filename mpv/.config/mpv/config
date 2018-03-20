@@ -7,8 +7,7 @@ autofit=30%
 #Audio
 ao=pulse
 alang=jp,jpn,en,eng,us,usa
-softvol=yes
-softvol-max=400
+volume-max=200
 
 #Network
 cache=20000
@@ -18,12 +17,6 @@ vo=opengl
 hwdec=vaapi
 
 #Subtitles
-sub-codepage=enca:ru
+sub-codepage=cp1251
 slang=ru,rus,en,eng
 
-#Profiles
-[hdmi]
-ao=alsa:device=[hw:0,3]
-
-[tutor]
-af=scaletempo
