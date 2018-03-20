@@ -35,6 +35,8 @@ setxkbmap -layout us,ru -option grp:caps_toggle,compose:menu
 xbindkeys
 # }}}
 
+nm-applet &
+
 # {{{ wm
 # compose
 compton -b
