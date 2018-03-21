@@ -8,6 +8,7 @@
 
 -- Output formats
 
+\set format_min '\\pset format unaligned \\pset tuples_only \\pset fieldsep \',\''
 \set format_cvs '\\pset format unaligned \\pset footer off \\pset fieldsep \',\''
 \set format_pretty '\\pset format aligned \\pset footer on \\pset fieldsep \'|\''
 
