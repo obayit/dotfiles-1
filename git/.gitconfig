@@ -2,6 +2,7 @@
     name = Peter Dosychev
     email = dosy4ev@gmail.com
 [alias]
+    rb = rebase -i @{u}
     a = !tig status
     st = status -sb
     lg = log --format=oneline --abbrev-commit --graph
@@ -10,7 +11,7 @@
     amend = commit --amend
     bdiff = show-branch --current --sha1-name
     blist = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset)\t%(color:yellow)%(refname:short)%(color:reset)\t(%(color:green)%(committerdate:relative)%(color:reset))\t%(authorname)\t%(contents:subject)' | column -t -s '\t'
-    blistc = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(objectname:short) %(refname:short)\t%(committerdate:relative) %(authorname)\t%(contents:subject)' | column -t -s '\t'
+    blistc = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(objectname:short) %(refname:short)\t%(committerdate:relative) %(authorname)\t%(contents:subject)' | column -t -s '\t'
 [diff]
     tool = vimdiff
 [color]
