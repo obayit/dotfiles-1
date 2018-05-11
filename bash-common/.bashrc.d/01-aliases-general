@@ -3,4 +3,7 @@ alias ll="ls -lh"
 alias la="ls -a"
 alias ls='ls --color=auto'
 
+# Python dev
+alias activate='[[ -d .venv ]] && source .venv/bin/activate || echo "no virtualenv in current folder"'
+
 # vim: ft=sh
