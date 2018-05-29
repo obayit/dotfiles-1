@@ -6,4 +6,6 @@ alias ls='ls --color=auto'
 # Python dev
 alias activate='[[ -d .venv ]] && source .venv/bin/activate || echo "no virtualenv in current folder"'
 
+alias nt='vim --cmd ":cd ~/doc/notes" ~/doc/notes/index.md'
+
 # vim: ft=sh
