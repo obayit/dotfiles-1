@@ -1,4 +1,4 @@
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 shopt -s histappend
