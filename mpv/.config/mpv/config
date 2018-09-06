@@ -6,14 +6,14 @@ autofit=30%
 
 #Audio
 ao=pulse
-alang=jp,jpn,en,eng,us,usa
+alang=ru,rus,jp,jpn,en,eng,us,usa
 volume-max=200
 
 #Network
 cache=20000
 
 #Video
-vo=opengl
+#vo=opengl
 hwdec=vaapi
 
 #Subtitles
