@@ -35,9 +35,12 @@ setxkbmap -layout us,ru -option grp:caps_toggle,compose:menu
 xbindkeys
 # }}}
 
+# desktop components {{{
+eval $(ssh-agent)
 nm-applet &
+# }}}
 
-# {{{ wm
+# wm {{{
 # compose
 compton -b
 exec i3
