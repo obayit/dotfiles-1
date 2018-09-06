@@ -1,0 +1,5 @@
+shopt -s autocd
+shopt -s dirspell
+shopt -s cdspell
+
+# vim: ft=sh

@@ -6,4 +6,7 @@ if [ ${TERM} == "screen" ] && [ ${DISPLAY} ] ;then
     export TERM=screen-256color
 fi
 
+# Update window size after every command
+shopt -s checkwinsize
+
 # vim: ft=sh

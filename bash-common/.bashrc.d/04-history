@@ -1,6 +1,8 @@
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 export HISTSIZE=5000
 export HISTFILESIZE=10000
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 shopt -s histappend
 shopt -s cmdhist
 shopt -s histverify
