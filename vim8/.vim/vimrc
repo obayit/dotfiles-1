@@ -1,0 +1,241 @@
+" Vim config 3.0
+
+" Basic setup {{{1
+
+" vim is not vi
+set nocompatible
+
+" allow edit everywhere
+set virtualedit=all
+
+" don't update while executung macros
+set lazyredraw
+
+" allow changed buffer to be hidden
+set hidden
+
+" key sequence delay
+set timeoutlen=500
+
+" commands history
+set history=100
+
+" leader for keybindings
+let mapleader="," 
+
+" terminal binding for <C-Space>
+imap <C-@> <C-Space>
+
+" this is dangereous
+set nobackup
+set noswapfile
+
+" }}}1
+
+" Common look and feel {{{1
+
+" hide mouse while typing
+set mousehide
+
+" 5 lines of context
+set scrolloff=5
+
+" i like to see what am i changing
+set cpoptions +=$
+
+" line numbers
+set number
+
+" show cmd-line completion options
+set wildmenu
+
+" make command line two lines high
+set ch=2
+
+" set the status line
+set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+
+" show current mode
+set showmode
+
+" tell Vim to always put a status line in, even if there is only one window
+set laststatus=2
+
+" syntax highlighting
+if has('gui_running') || (&t_Co > 2)
+    syntax on
+endif
+
+" }}}1
+
+" GUI {{{1
+
+" i like minimal gui
+set guioptions=ac
+
+" no intro
+set shortmess=I
+
+" set colorscheme
+colorscheme xoria256
+
+" font options
+if has('gui_running') && has('win32')
+    set guifont=Courier\ New:h8
+endif
+
+if has('gui_running') && has('unix')
+    set guifont=Droid\ Sans\ Mono\ 8
+    "set guifont=Terminus\ 8
+endif
+
+" }}}1
+
+" Basic text editing {{{1 
+
+" encoding settings {{{2
+set fileencodings=utf-8,koi8-r,cp1251,cp866
+
+" }}}2
+
+" Tab settings {{{2
+
+" tab width is 2 spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" use tab, not spaces
+set expandtab
+
+" act like it's tabs if front of a line
+set smarttab
+
+" copy indent from previous line
+set autoindent
+
+" smart autoindenting 
+set smartindent
+
+" }}}2
+
+" Searching {{{2
+
+" case sensitive search only whe pattern has upper case
+set smartcase
+
+" highlight all matches
+set hlsearch
+
+" higlight current matching while typing search pattern
+set incsearch
+
+nmap <leader>h :nohlsearch<CR>
+
+" }}}2
+
+" }}}1
+
+" Advanced text editing {{{1
+
+" spellcheck {{{2
+ 
+" setup spelling languages
+set spelllang=ru,en_us
+
+" flag
+let g:check_spell=0
+
+" }}}2
+
+" }}}1
+
+" IDE {{{1
+
+" slime settings {{{2
+let g:slime_target = 'tmux'
+let g:slime_python_ipython = 1
+let g:slime_no_mapping = 1
+xmap <leader>s <Plug>SlimeRegionSend
+nmap <leader>s <Plug>SlimeMotionSend
+nmap <leader>ss <Plug>SlimeLineSend
+" }}}2
+
+" folding {{{2
+
+" switch folding method
+function SWITCHFOLD()
+    if &foldmethod=="marker"
+        set foldmethod=syntax
+        echo "syntax folding"
+        return
+    endif
+    if &foldmethod=="syntax"
+        set foldmethod=indent
+        echo "indent folding"
+        return
+    endif
+    if &foldmethod=="indent"
+        set foldmethod=manual
+        echo "manual folding"
+        return
+    endif
+    if &foldmethod=="manual"
+        set foldmethod=marker
+        echo "marker folding"
+        return
+    endif
+endfunction
+
+" open folds on some actions
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+
+" keybindings
+map <special><F2> <Esc>:call SWITCHFOLD()<CR>
+
+" default
+set foldmethod=marker
+
+" }}}2
+
+" Tags List {{{2
+map <special> <F5> :TagbarToggle<CR>
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'ctagsbin' : '/home/piter/.vim/tools/rst2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+" }}}2
+
+" qfix window toggle {{{2
+" toggles the quickfix window.
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+  else
+    copen
+  endif
+endfunction
+
+" used to track the quickfix window
+augroup QFixToggle
+ autocmd!
+ autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+ autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+augroup END
+
+map <special> <F1> :QFix<CR>
+" }}}2
+
+" }}}1
+

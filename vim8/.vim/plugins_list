@@ -1,0 +1,8 @@
+pack/bundle/opt/vim-clang https://github.com/justmao945/vim-clang.git
+pack/bundle/start/nerdcommenter https://github.com/scrooloose/nerdcommenter.git
+pack/bundle/start/vim-eunuch https://github.com/tpope/vim-eunuch.git
+pack/bundle/start/vim-repeat https://github.com/tpope/vim-repeat.git
+pack/bundle/start/vim-slime https://github.com/jpalardy/vim-slime.git
+pack/bundle/start/vim-surround https://github.com/tpope/vim-surround.git
+pack/bundle/start/vim-unimpaired https://github.com/tpope/vim-unimpaired.git
+pack/bundle/start/vim-vinegar https://github.com/tpope/vim-vinegar.git
