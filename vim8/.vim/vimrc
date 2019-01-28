@@ -30,6 +30,8 @@ imap <C-@> <C-Space>
 set nobackup
 set noswapfile
 
+filetype plugin on
+
 " }}}1
 
 " Common look and feel {{{1
