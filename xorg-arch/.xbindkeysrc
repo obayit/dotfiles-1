@@ -7,4 +7,9 @@
 "pamixer -t"
   XF86AudioMute
 
-#XF86AudioMicMute
+"amixer -D pulse sset Capture toggle"
+  XF86AudioMicMute
+
+"xset s activate"
+  Mod4 + o  
+

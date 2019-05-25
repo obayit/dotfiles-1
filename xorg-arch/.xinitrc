@@ -38,6 +38,7 @@ xbindkeys
 # desktop components {{{
 eval $(ssh-agent)
 nm-applet &
+xss-lock -l lock-script.sh &
 # }}}
 
 # wm {{{
