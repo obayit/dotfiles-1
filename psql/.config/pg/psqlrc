@@ -4,7 +4,11 @@
 \pset null ¤
 \x auto
 \set HISTCONTROL ignoredups
-\set uptime 'select now() - pg_postmaster_start_time() AS uptime;'
+
+-- UI
+
+\set c '\\i ~/.config/pg/scripts/select_database'
+\set s '\\i ~/.config/pg/scripts/set_search_path'
 
 -- Output formats
 
@@ -13,7 +17,5 @@
 \set format_pretty '\\pset format aligned \\pset footer on \\pset fieldsep \'|\''
 
 :format_pretty
-
-\ir .psqlrc-local
 
 \set QUIET OFF

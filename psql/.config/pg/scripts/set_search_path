@@ -1,0 +1,4 @@
+select string_agg(schema_name, '\\n') as _current_schemas from information_schema.schemata
+\gset
+\set _selected_schema `echo -e :_current_schemas | fzy --prompt "schema: "`
+set search_path TO :'_selected_schema';
