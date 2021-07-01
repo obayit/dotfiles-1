@@ -1,0 +1,12 @@
+[Unit]
+Description=SSH key agent (%I)
+
+[Service]
+Type=simple
+# %t resolves to XDG_RUNTIME_DIR; see SPECIFIERS section in systemd.unit(5)
+# %i is escaped parameter
+# %I is unescaped parameter
+ExecStart=/usr/bin/ssh-agent -D -a "%t/ssh-agent-%i.socket"
+
+[Install]
+WantedBy=default.target
