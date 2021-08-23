@@ -1,0 +1,10 @@
+[Unit]
+Description=Rclone mount for %I
+AssertPathIsDirectory=%h/mnt/%i
+
+[Service]
+Type=notify
+# %t resolves to XDG_RUNTIME_DIR; see SPECIFIERS section in systemd.unit(5)
+# %i is escaped parameter
+# %I is unescaped parameter
+ExecStart=/usr/bin/rclone mount %i: %h/mnt/%i --vfs-cache-mode full
