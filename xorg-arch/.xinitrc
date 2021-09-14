@@ -31,19 +31,17 @@ export GTK_IM_MODULE=xim
 #export XMODIFIERS=@im=xim
 export QT_IM_MODULE=xim
 
-setxkbmap -layout us,ru -option grp:caps_toggle,compose:menu
+setxkbmap -layout us,ru -option grp:caps_toggle,compose:prsc
 xbindkeys
 # }}}
 
 # desktop components {{{
-eval $(ssh-agent)
 nm-applet &
 xss-lock -l lock-script.sh &
 # }}}
 
 # wm {{{
 # compose
-compton -b
+picom -i 1 -m 1 -e 1 -b --vsync
 exec i3
 # }}}
-
