@@ -7,11 +7,13 @@
     st = status -sb
     lg = log --format=oneline --abbrev-commit --graph
     ln = log --abbrev-commit --oneline --no-merges
+    ll = log --abbrev-commit --oneline --no-merges -n 10
     sh = show --oneline --name-status
     amend = commit --amend
     bdiff = show-branch --current --sha1-name
     blist = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset)\t%(color:yellow)%(refname:short)%(color:reset)\t(%(color:green)%(committerdate:relative)%(color:reset))\t%(authorname)\t%(contents:subject)' | column -t -s '\t'
     blistc = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(objectname:short) %(refname:short)\t%(committerdate:relative) %(authorname)\t%(contents:subject)' | column -t -s '\t'
+    ch = !git blistc | fzf | awk '{ print $2 }' | xargs git checkout
 [diff]
     tool = vimdiff
 [color]
@@ -28,3 +30,5 @@
     tool = vimdiff
 [difftool "sqldiff"]
     cmd = sqldiff \"$LOCAL\" \"$REMOTE\" 
+[rebase]
+	autosquash = true
