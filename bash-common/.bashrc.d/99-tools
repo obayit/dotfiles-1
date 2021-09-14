@@ -1,9 +1,0 @@
-# Enable x11vnc on remote host and forward it with ssh
-x11vncon()
-{
-    ssh $* -C -t -L 5900:localhost:5900 'sudo x11vnc -display :0.0 -forever'
-}
-
-complete -F _ssh x11vncon
-
-# vim: ft=sh

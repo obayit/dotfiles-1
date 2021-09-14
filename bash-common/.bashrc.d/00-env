@@ -1,5 +1,6 @@
 export PATH="${PATH}:${HOME}/bin"
 export EDITOR=vim
+export PAGER=less
 
 # XDG Base Directory
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
@@ -8,3 +9,5 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 # XDG_RUNTIME_DIR is set via pam_systemd
+
+export JQ_COLORS='0;37:0;37:0;37:0;37:0;32:1;37:1;37'

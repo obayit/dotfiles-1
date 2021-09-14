@@ -2,4 +2,6 @@ shopt -s autocd
 shopt -s dirspell
 shopt -s cdspell
 
+CDPATH=.:~:~/projects:~/projects/hh
+
 # vim: ft=sh
